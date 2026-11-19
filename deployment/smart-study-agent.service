@@ -1,0 +1,16 @@
+[Unit]
+Description=Smart Study Agent FastAPI Backend
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/opt/smart-study-agent/backend
+Environment="PATH=/opt/smart-study-agent/venv/bin"
+EnvironmentFile=/opt/smart-study-agent/backend/.env
+ExecStart=/opt/smart-study-agent/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

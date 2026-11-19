@@ -1,0 +1,31 @@
+# Environment & secrets
+.env
+backend/.env
+
+# SQLite databases (local dev only - use RDS on AWS)
+*.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+build/
+
+# OS / IDE
+.DS_Store
+*.log
+Thumbs.db
+.vscode/
+.idea/
+
+# Alembic compiled
+alembic/versions/*.pyc
