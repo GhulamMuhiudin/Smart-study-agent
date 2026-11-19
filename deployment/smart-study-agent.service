@@ -1,6 +1,6 @@
 [Unit]
 Description=Smart Study Agent FastAPI Backend
-After=network.target postgresql.service
+After=network.target
 
 [Service]
 Type=simple

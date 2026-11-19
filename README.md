@@ -458,11 +458,29 @@ git push -u origin main
 
 ---
 
-## ☁️ AWS EC2 Deployment
+## ☁️ AWS Cloud & Database Deployment
 
-See the full step-by-step guide for deploying to Amazon Linux 2023:
+For production deployment on AWS:
+- **Database Setup (AWS RDS PostgreSQL or Self-Hosted)**: 👉 **[deployment/AWS_DATABASE_GUIDE.md](./deployment/AWS_DATABASE_GUIDE.md)**
+- **EC2 Deployment Guide (Amazon Linux / Ubuntu)**: 👉 **[deployment/DEPLOY.md](./deployment/DEPLOY.md)**
+- **One-Click Automated EC2 Script**: `deployment/setup-ec2.sh`
 
-👉 **[deployment/DEPLOY.md](./deployment/DEPLOY.md)**
+### Option A: One-Click Script on EC2
+```bash
+git clone https://github.com/GhulamMuhiudin/Smart-study-agent.git
+cd Smart-study-agent
+chmod +x deployment/setup-ec2.sh
+./deployment/setup-ec2.sh
+```
+
+### Option B: Docker Compose (Any Cloud Server)
+```bash
+git clone https://github.com/GhulamMuhiudin/Smart-study-agent.git
+cd Smart-study-agent
+cp backend/.env.example backend/.env
+# Edit backend/.env with your AI API Key, Database URL, and SECRET_KEY
+docker compose up --build -d
+```
 
 ---
 
